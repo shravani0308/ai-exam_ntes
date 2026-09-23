@@ -4,6 +4,10 @@ import Auth from "./pages/Auth";
 import {useEffect} from "react"
 import {getCurrentUser} from "./services/api.js"
 import {useDispatch ,useSelector} from "react-redux"
+import History from "./pages/History";
+import Notes from "./pages/Notes"
+import Pricing from "./pages/Pricing.jsx";
+
 export const serverUrl ="http://localhost:8000"
 function App ()  {
    const dispatch = useDispatch()
@@ -18,6 +22,9 @@ function App ()  {
     <Routes>
      <Route path="/" element={userData ?<Home/>:<Navigate to="/auth" replace/>} />
      <Route path="/auth" element={userData ?<Navigate to="/" replace/>:<Auth/>} />
+     <Route path="/history" element={userData ? <History/>:<Navigate to="/auth" replace/>} />
+     <Route path="/notes" element={userData ?<Notes/>:<Navigate to="/" replace/>} />
+     <Route path="/pricing" element={userData ?<Pricing/>:<Navigate to="/" replace/>} />
     </Routes>
     </>
   )

@@ -89,7 +89,7 @@ function Navbar() {
       Use credits to generate AI notes, diagrams & PDFs.
     </p>
 
-    <button 
+    <button  onClick={()=>{setShowCredits(false);navigate("/pricing")}}
       className="w-full py-2 rounded-lg
         bg-gradient-to-br from-white to-gray-200
         text-black font-semibold
@@ -131,7 +131,7 @@ function Navbar() {
         shadow-[0_25px_60px_rgba(0,0,0,0.7)]
         p-4 text-white">
 
-                  <MenuBar text="History" onClick={()=>setShowProfile(false)}/>
+                  <MenuBar text="History" onClick={()=>{setShowProfile(false);navigate("/history")}}/>
                     <div className="h-px bg-white/10 mx-3"/>
                     <MenuBar text="Sign out" red onClick={handleSignOut}/>
           

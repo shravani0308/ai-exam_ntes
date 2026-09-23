@@ -1,8 +1,11 @@
 import Navbar from "../components/Navbar"
 import { motion } from "motion/react"
 import img from "../assets/img1.png"
+import Footer from "../components/Footer"
+import { useNavigate } from "react-router-dom"
 
 function Home() {
+  const navigate = useNavigate()
   return (
     <div className="min-h-screen overflow-hidden bg-white text-block">
       <Navbar/>
@@ -46,7 +49,7 @@ function Home() {
 </motion.p>
 
 <motion.button
-  
+  onClick={()=>navigate("/notes")}
  whileHover={{y:-10,rotateX:8,rotateY:-8,
   scale:1.07}}
 
@@ -105,6 +108,7 @@ function Home() {
     des="Download clean, printable PDFs instantly."
   />
 </section>
+<Footer/>
       
     </div>
   )
