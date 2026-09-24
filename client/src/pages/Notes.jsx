@@ -1,6 +1,7 @@
 import { motion } from "motion/react"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import TopicForm from "../components/TopicForm"
 
 
 
@@ -33,8 +34,8 @@ export default function Notes() {
         </div>
 
 
-        <div className="flex items-center gap-4">
-          <button   onClick={()=> navigate("pricing")}
+        <div className="flex items-center gap-4 flex-wrap">
+          <button   onClick={()=> navigate("/pricing")}
           className="flex items-center gap-2 
           px-4 py-2 rounded-full bg-white/10 border border-white/20
           text-white text-small">
@@ -57,6 +58,7 @@ export default function Notes() {
     hover:bg-white/20
     transition
     flex items-center gap-2"
+    onClick={()=> navigate("/history")}
 >
   📚 Your Notes
 </button>
@@ -64,6 +66,10 @@ export default function Notes() {
 
         
       </motion.header>
+      <motion.div
+      className="mb-12">
+        <TopicForm/>
+      </motion.div>
       
     </div>
   )
